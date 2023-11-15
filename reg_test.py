@@ -26,3 +26,17 @@ mo1 = hero_regex.search('Batman and Tina Fey.')
 print(mo1.group())
 mo1 = hero_regex.search(' Tina Fey and Batman.')
 print(mo1.group())
+
+hero_regex = re.compile(r'Bat(man|mobile|copter|bat)')
+mo = hero_regex.search('Batmobile lost a wheel')
+print(mo.group())
+print(mo.group(1))
+
+# 用问号实现可选匹配
+
+hero_regex = re.compile(r'Bat(wo)?man')
+mo = hero_regex.search('The Adventures of Batman')
+print(mo.group())
+
+mo = hero_regex.search('The Adventures of Batwoman')
+print(mo.group())
