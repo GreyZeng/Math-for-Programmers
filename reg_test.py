@@ -40,3 +40,10 @@ print(mo.group())
 
 mo = hero_regex.search('The Adventures of Batwoman')
 print(mo.group())
+
+phoneNumRegex = re.compile(r'(\d\d\d-)?\d\d\d-\d\d\d\d')
+mo = phoneNumRegex.search('My number is 415-555-4343')
+print(mo.group())
+
+mo = phoneNumRegex.search('My number is 444-3432')
+print(mo.group())
