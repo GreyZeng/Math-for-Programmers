@@ -47,3 +47,8 @@ print(mo.group())
 
 mo = phoneNumRegex.search('My number is 444-3432')
 print(mo.group())
+
+# 用星号匹配零次或多次
+hero_regex = re.compile(r'Bat(wo)*man')
+print(hero_regex.search('The Adventures of Batman').group())
+print(hero_regex.search('The Adventures of Batwoman').group())
