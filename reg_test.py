@@ -53,3 +53,9 @@ hero_regex = re.compile(r'Bat(wo)*man')
 print(hero_regex.search('The Adventures of Batman').group())
 print(hero_regex.search('The Adventures of Batwoman').group())
 print(hero_regex.search('The Adventures of Batwowowowoman').group())
+
+# 用加号匹配一次或多次
+hero_regex = re.compile(r'Bat(wo)+man')
+print(hero_regex.search('The Adventures of Batwoman').group())
+print(hero_regex.search('The Adventures of Batwowowowoman').group())
+print(hero_regex.search('The Adventures of Batman') == None)
