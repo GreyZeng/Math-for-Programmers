@@ -65,3 +65,13 @@ print(hero_regex.search('The Adventures of Batman') == None)
 hero_regex = re.compile(r'(ha){3}')
 print(hero_regex.search('hahaha').group())
 print(hero_regex.search('ha') == None)
+
+# 贪心和非贪心匹配
+# 默认是贪心的，所以下述正则会匹配到最长的那个字符串
+greedy_ha_regex = re.compile(r'(Ha){3,5}')
+mo = greedy_ha_regex.search('HaHaHaHaHa')
+print(mo.group())
+# 加了一个问好，则变成非贪心的，所以下述正则会匹配到最短的那个字符串
+greedy_ha_regex = re.compile(r'(Ha){3,5}?')
+mo = greedy_ha_regex.search('HaHaHaHaHa')
+print(mo.group())
