@@ -19,7 +19,6 @@ mo = phoneNumRegex.search('My phone number is (415) 333-3323.')
 print(mo.group(1))
 print(mo.group(2))
 
-
 # 使用管道匹配多个分组
 hero_regex = re.compile(r'Batman|Tina Fey')
 mo1 = hero_regex.search('Batman and Tina Fey.')
@@ -58,13 +57,13 @@ print(hero_regex.search('The Adventures of Batwowowowoman').group())
 hero_regex = re.compile(r'Bat(wo)+man')
 print(hero_regex.search('The Adventures of Batwoman').group())
 print(hero_regex.search('The Adventures of Batwowowowoman').group())
-print(hero_regex.search('The Adventures of Batman') == None)
+print(hero_regex.search('The Adventures of Batman') is None)
 
 # 用花括号匹配特定次数
 
 hero_regex = re.compile(r'(ha){3}')
 print(hero_regex.search('hahaha').group())
-print(hero_regex.search('ha') == None)
+print(hero_regex.search('ha') is None)
 
 # 贪心和非贪心匹配
 # 默认是贪心的，所以下述正则会匹配到最长的那个字符串
