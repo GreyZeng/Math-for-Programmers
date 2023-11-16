@@ -59,3 +59,9 @@ hero_regex = re.compile(r'Bat(wo)+man')
 print(hero_regex.search('The Adventures of Batwoman').group())
 print(hero_regex.search('The Adventures of Batwowowowoman').group())
 print(hero_regex.search('The Adventures of Batman') == None)
+
+# 用花括号匹配特定次数
+
+hero_regex = re.compile(r'(ha){3}')
+print(hero_regex.search('hahaha').group())
+print(hero_regex.search('ha') == None)
