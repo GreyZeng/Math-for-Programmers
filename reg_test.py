@@ -76,7 +76,13 @@ mo = greedy_ha_regex.search('HaHaHaHaHa')
 print(mo.group())
 
 # findAll 方法 找到所有匹配的字符串
-
+# 如果在一个没有分组的正则表达式上调用，例如下述情况
+# findAll方法将返回一个匹配字符串的列表
 phone_reg = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+mo = phone_reg.findall('Cell: 453-432-5555 Work: 453-908-8887')
+print(mo)
+# 如果在一个有分组的正则表达式上调用，例如下述情况
+# findAll方法将返回一个字符串的元组的列表
+phone_reg = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)')
 mo = phone_reg.findall('Cell: 453-432-5555 Work: 453-908-8887')
 print(mo)
