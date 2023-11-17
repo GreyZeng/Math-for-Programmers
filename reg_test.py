@@ -100,6 +100,12 @@ print(xmas_regex.findall('12 abc, 23 bbb, d 44 ,34    abc, 44 444, 33 abc'))
 # 匹配元音字符
 reg = re.compile(r'[aeiouAEIOU]')
 print(reg.findall('I love you'))
-# 匹配非元音字符
+# 在字符分类的左方括号后加入一个插入字符(^), 就可以得到“非字符类”，
+# 例如下面例子，就是匹配非元音字符
 reg = re.compile(r'[^aeiouAEIOU]')
 print(reg.findall('I love you'))
+
+# 在正则表达式的开始处使用插入符号（^), 表明匹配必须发生在被查找文本的开始处
+re = re.compile(r'^hello')
+print(re.search('hello world!'))
+print(re.search('world hello') is None)
