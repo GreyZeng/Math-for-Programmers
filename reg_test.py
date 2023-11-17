@@ -74,3 +74,9 @@ print(mo.group())
 greedy_ha_regex = re.compile(r'(Ha){3,5}?')
 mo = greedy_ha_regex.search('HaHaHaHaHa')
 print(mo.group())
+
+# findAll 方法 找到所有匹配的字符串
+
+phone_reg = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+mo = phone_reg.findall('Cell: 453-432-5555 Work: 453-908-8887')
+print(mo)
