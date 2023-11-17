@@ -97,6 +97,9 @@ print(mo)
 # \S : 除空格、制表符和换行符以外的任何字符
 xmas_regex = re.compile(r'\d+\s\w+')
 print(xmas_regex.findall('12 abc, 23 bbb, d 44 ,34    abc, 44 444, 33 abc'))
-
+# 匹配元音字符
 reg = re.compile(r'[aeiouAEIOU]')
+print(reg.findall('I love you'))
+# 匹配非元音字符
+reg = re.compile(r'[^aeiouAEIOU]')
 print(reg.findall('I love you'))
