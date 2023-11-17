@@ -86,3 +86,14 @@ print(mo)
 phone_reg = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)')
 mo = phone_reg.findall('Cell: 453-432-5555 Work: 453-908-8887')
 print(mo)
+
+# 字符分类
+
+# \d : 0 ~ 9 的任何数字
+# \D : 除 0 ~ 9 的数字以外的任何字符
+# \w : 任何字符、数字或下划线字符（可以认为是匹配“单词”字符）
+# \W : 除字母、数字和下划线以外的任何字符
+# \s : 空格、制表符或换行符（可以认为是匹配空白字符）
+# \S : 除空格、制表符和换行符以外的任何字符
+xmas_regex = re.compile(r'\d+\s\w+')
+print(xmas_regex.findall('12 abc, 23 bbb, 34    abc, 44 444, 33 abc'))
