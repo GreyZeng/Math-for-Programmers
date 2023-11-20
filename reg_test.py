@@ -106,6 +106,23 @@ reg = re.compile(r'[^aeiouAEIOU]')
 print(reg.findall('I love you'))
 
 # 在正则表达式的开始处使用插入符号（^), 表明匹配必须发生在被查找文本的开始处
-re = re.compile(r'^hello')
-print(re.search('hello world!'))
-print(re.search('world hello') is None)
+reg = re.compile(r'^hello')
+print(reg.search('hello world!'))
+print(reg.search('world hello') is None)
+
+# 正则表达式 r'\d$' 匹配以数字 0 ~ 9 结束的字符串。
+reg = re.compile(r'\d$')
+print(reg.search('Your number is 999'))
+print(reg.findall('Your number is 999'))
+# r'\d+$' 匹配从开始到结束都是数字的字符串。
+reg = re.compile(r'^\d+$')
+print(reg.search("12334545"))
+print(reg.search("12334x545") is None)
+print(reg.search("1233  545") is None)
+# .字符称为“通配字符”，它匹配换行符以外的所有字符
+reg = re.compile(r'.at')
+print(reg.findall('The cat in the hat sat on the flat mat.'))
+# .* 表示任意文本：点表示换行符外的所有单个字符，星号表示前面字符出现0次或多次
+reg = re.compile(r'First Name:(.*) Last Name:(.*)')
+print(reg.search("First Name:Grey Last Name:Zeng").group(1))
+print(reg.search("First Name:Grey Last Name:Zeng").group(2))
