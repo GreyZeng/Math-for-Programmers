@@ -122,7 +122,14 @@ print(reg.search("1233  545") is None)
 # .字符称为“通配字符”，它匹配换行符以外的所有字符
 reg = re.compile(r'.at')
 print(reg.findall('The cat in the hat sat on the flat mat.'))
-# .* 表示任意文本：点表示换行符外的所有单个字符，星号表示前面字符出现0次或多次
+# .* 表示任意文本(贪心模式）：点表示换行符外的所有单个字符，星号表示前面字符出现0次或多次
 reg = re.compile(r'First Name:(.*) Last Name:(.*)')
 print(reg.search("First Name:Grey Last Name:Zeng").group(1))
 print(reg.search("First Name:Grey Last Name:Zeng").group(2))
+# 如果要改成非贪心模式，需要加上问号
+reg = re.compile(r'<.*?>')
+# 输出：<To serve man>
+print(reg.search('<To serve man> for dinner.>').group())
+reg = re.compile(r'<.*>')
+# 输出：<To serve man> for dinner.>
+print(reg.search('<To serve man> for dinner.>').group())
