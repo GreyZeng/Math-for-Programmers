@@ -161,3 +161,16 @@ print(reg.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.')
 # 字符串中的\1将由分组1匹配的文本所替代
 reg = re.compile(r'Agent (\w)\w*')
 print(reg.sub(r'\1*****', 'Agent Alice gave the secret documents to Agent Bob. Agent '))
+# 管理复杂的正则表达式
+# re.VERBOSE: 忽略正则表达式字符串中的空白符和注释
+reg = re.compile(r'''
+(\d{3}|\(\d{3}\))? # area code
+(\s|-|\.)? # separator
+\d{3} # first 3 digits
+(\s|-|\.) # separator
+\d{4} # last 4 digits
+(\s*(ext|x|ext.)\s*\d{2,5})? # extension
+''', re.VERBOSE)
+# 组合使用 re.I, re.DOTALL 和 re.VERBOSE，可以使用管道
+reg = re.compile('foo', re.I | re.DOTALL | re.VERBOSE)
+print(reg.findall('foo FOO foO FoO'))
