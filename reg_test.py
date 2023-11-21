@@ -149,3 +149,6 @@ print(reg.search('<To serve man> for dinner.>').group())
 reg = re.compile(r'<.*>')
 # 输出：<To serve man> for dinner.>
 print(reg.search('<To serve man> for dinner.>').group())
+# .*如果要匹配包括换行符的所有字符，可以加一个参数
+reg = re.compile('.*', re.DOTALL)
+print(reg.search("abc \n cdef\n aaa"))
