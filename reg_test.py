@@ -152,3 +152,6 @@ print(reg.search('<To serve man> for dinner.>').group())
 # .*如果要匹配包括换行符的所有字符，可以加一个参数
 reg = re.compile('.*', re.DOTALL)
 print(reg.search("abc \n cdef\n aaa"))
+# 不区分大小写的匹配，增加一个配置参数
+reg = re.compile(r'robot', re.I)
+print(reg.findall("robot  RobOT  rOBot roboT"))
