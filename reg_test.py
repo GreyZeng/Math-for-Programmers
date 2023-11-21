@@ -155,3 +155,6 @@ print(reg.search("abc \n cdef\n aaa"))
 # 不区分大小写的匹配，增加一个配置参数
 reg = re.compile(r'robot', re.I)
 print(reg.findall("robot  RobOT  rOBot roboT"))
+# sub()方法第一个参数是一个字符串，用户替换发现的匹配。第二个参数是一个字符串，即正则表达式，方法返回替换完成后的字符串
+reg = re.compile(r'Agent \w+')
+print(reg.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.'))
