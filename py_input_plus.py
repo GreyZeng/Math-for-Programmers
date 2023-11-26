@@ -12,4 +12,8 @@ import pyinputplus as pyip
 # 10 秒等待还没输入成功就报错
 # response = pyip.inputNum(timeout=10)
 # 不会引发 RetryLimitException, 只会返回字符串 N/A
-response = pyip.inputNum(limit=2, default="N/A")
+# response = pyip.inputNum(limit=2, default="N/A")
+# response = pyip.inputNum(allowRegexes=[r"(I|V|X|L|C|D|M)+", r"zero"])
+# inputNum不接收偶数作为有效输入
+response = pyip.inputNum(blockRegexes=[r"[02468]$"])
+print(response)
