@@ -1,5 +1,7 @@
+import random
+import time
+
 import pyinputplus as pyip
-import random, time
 
 number_of_question = 10
 correct_answer = 0
@@ -22,3 +24,6 @@ for q_num in range(number_of_question):
         print("Out of tries!")
     else:
         print("correct!")
+        correct_answer += 1
+        time.sleep(1)
+    print("Score: %s / %s" % (correct_answer, number_of_question))
