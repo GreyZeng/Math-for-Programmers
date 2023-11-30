@@ -15,5 +15,8 @@ import pyinputplus as pyip
 # response = pyip.inputNum(limit=2, default="N/A")
 # response = pyip.inputNum(allowRegexes=[r"(I|V|X|L|C|D|M)+", r"zero"])
 # inputNum不接收偶数作为有效输入
-response = pyip.inputNum(blockRegexes=[r"[02468]$"])
+# response = pyip.inputNum(blockRegexes=[r"[02468]$"])
+response = pyip.inputStr(
+    allowRegexes=[r"caterpillar", "category"], blockRegexes=[r"cat"]
+)
 print(response)
