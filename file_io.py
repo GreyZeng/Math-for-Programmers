@@ -25,3 +25,5 @@ home_folder = Path('C:/Users/zhuiz')
 sub_folder = Path('spam')
 home_folder / sub_folder
 str(home_folder / sub_folder)
+Path.cwd()
+str(Path.cwd())
