@@ -27,3 +27,12 @@ home_folder / sub_folder
 str(home_folder / sub_folder)
 Path.cwd()
 str(Path.cwd())
+import os
+
+os.chdir('C:\\Windows\\System32')
+Path.cwd()
+Path.home()
+
+# os.mkdir('C:\\workspace\\temp')
+
+Path(r'C:\workspace\tmp').mkdir()
