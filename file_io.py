@@ -36,3 +36,5 @@ Path.home()
 # os.mkdir('C:\\workspace\\temp')
 
 Path(r'C:\workspace\tmp').mkdir()
+
+Path.cwd().is_absolute()
