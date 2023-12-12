@@ -4,8 +4,6 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 import matplotlib.cm
 import camera
-from vectors import *
-from math import *
 from transforms import *
 
 def normal(face):

@@ -1,4 +1,4 @@
-from vectors import *
+from snippets.vectors import *
 
 ################################################################
 # Vector transformation functions we'll introduce in Chapter 4 #
