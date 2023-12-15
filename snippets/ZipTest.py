@@ -38,3 +38,12 @@ p = Path(pd / "example2.zip")
 exampleZip = support_gbk(zipfile.ZipFile(p))
 exampleZip.extract('2.txt', pd)
 exampleZip.close()
+
+# 创建和添加到ZIP文件
+# 创建模式
+new_zip = zipfile.ZipFile(pd / 'new.zip', 'w')
+new_zip.write(pd / 'spam.txt', compress_type=zipfile.ZIP_DEFLATED)
+# 添加模式
+new_zip2 = zipfile.ZipFile(pd / 'example2.zip', 'a')
+new_zip2.write(pd / 'spam.txt', compress_type=zipfile.ZIP_DEFLATED)
+new_zip.close()
