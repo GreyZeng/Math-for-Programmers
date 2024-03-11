@@ -1,7 +1,6 @@
-from math import sqrt, pi, ceil, floor
+from math import sqrt, ceil, floor
 import matplotlib
 import matplotlib.patches
-from matplotlib.collections import PatchCollection
 
 
 import numpy as np
