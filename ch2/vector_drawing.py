@@ -15,8 +15,8 @@ purple = "C4"
 orange = "C2"
 gray = "gray"
 
-
-class Polygon:
+# 多边形
+class Polygon: 
     def __init__(self, *vertices, color=blue, fill=None, alpha=0.4):
         self.vertices = vertices
         self.color = color
